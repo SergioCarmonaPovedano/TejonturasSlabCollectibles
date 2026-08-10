@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07090c" />
+  <meta name="description" content="Catálogo premium de cartas Pokémon gradeadas con visor 360° de cada slab." />
+  <title>Tejonturas — Graded Pokémon Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"></path></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l1 13H5L6 8Z"></path><path d="M9 9V6a3 3 0 0 1 6 0v3"></path></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></symbol>
+    <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"></path><path d="M20 4v7h-7"></path></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"></path></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5.2 3.4 8.8 8 10 4.6-1.2 8-4.8 8-10V6l-8-3Z"></path><path d="m8.5 12 2.1 2.1 4.9-5"></path></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m13 2-2 8H4l7 3-2 9 7-11h4l-7-3V2Z"></path></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></symbol>
+  </svg>
+
+  <div class="page-glow glow-blue"></div>
+  <div class="page-glow glow-gold"></div>
+  <div class="noise"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Tejonturas, inicio">
+      <img src="assets/logo.png" alt="Tejonturas Logo" class="brand-img-small" />
+      <span class="brand-copy">
+        <strong>TEJONTURAS</strong>
+        <small>GRADED COLLECTIBLES</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#inicio" id="navHomeLink">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto" id="navContactLink">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+      <label class="header-search" aria-label="Buscar en el catálogo">
+        <svg><use href="#i-search"></use></svg>
+        <input id="globalSearch" type="search" placeholder="Buscar carta, set, grading…" autocomplete="off" />
+        <kbd>/</kbd>
+      </label>
+      <button class="header-icon favorite-button" type="button" aria-label="Favoritos">
+        <svg><use href="#i-heart"></use></svg>
+        <span id="favoriteCount" class="count-badge" hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- VISTA 1: Bienvenida -->
+    <section id="welcome-view" class="view-section">
+      <div class="welcome-hero-container">
+        
+        <!-- Copy & CTA -->
+        <div class="welcome-text-side">
+          <div class="welcome-badge">
+            <span class="badge-dot"></span> TEJONTURAS SLAB CATALOG
+          </div>
+          
+          <h1 class="welcome-hero-title">
+            TEJONTURAS
+          </h1>
+          
+          <h2 class="welcome-slogan-shine">
+            Las slabs que te la ponen rígida.
+          </h2>
+          
+          <p class="welcome-desc">
+            Colección exclusiva de cartas Pokémon gradeadas con inspección 360º inmersiva en alta definición.
+          </p>
+          
+          <div class="welcome-actions">
+            <button id="enterCatalogBtn" class="primary-action welcome-btn pulse-btn">
+              <span>EXPLORAR CATÁLOGO</span>
+              <svg><use href="#i-arrow-right"></use></svg>
+            </button>
+          </div>
+
+          <div class="welcome-stats">
+            <div class="stat-pill"><strong id="statCountHero">25+</strong> <span>SLABS</span></div>
+            <div class="stat-pill"><strong>360º</strong> <span>VISOR REAL</span></div>
+            <div class="stat-pill"><strong>100%</strong> <span>AUTÉNTICO</span></div>
+          </div>
+        </div>
+
+        <!-- 3D Spinning Glass Slab Stage -->
+        <div class="welcome-3d-side">
+          <div class="hero-slab-stage">
+            <div class="hero-slab-glow"></div>
+            <div class="hero-slab-wrap">
+              <div class="hero-slab-object">
+                <div class="hero-slab-face hero-slab-front">
+                  <img src="assets/Charizard-Front.webp" alt="Charizard Slab 3D Front" />
+                  <div class="hero-slab-glint"></div>
+                </div>
+                <div class="hero-slab-face hero-slab-back">
+                  <img src="assets/Charizard-Back.webp" alt="Charizard Slab 3D Back" />
+                  <div class="hero-slab-glint"></div>
+                </div>
+                <div class="hero-slab-side side-left"></div>
+                <div class="hero-slab-side side-right"></div>
+                <div class="hero-slab-side side-top"></div>
+                <div class="hero-slab-side side-bottom"></div>
+              </div>
+            </div>
+            <div class="hero-slab-pedestal"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <section id="viewer-view" class="view-section view-hidden">
+      <div class="viewer-header">
+        <button id="backToCatalogBtn" class="secondary-action back-btn">
+          <svg><use href="#i-arrow-left"></use></svg> Volver al Catálogo
+        </button>
+      </div>
+      <section class="product-shell" id="experiencia">
+        <aside class="gallery-rail" aria-label="Vistas de la slab">
+          <div class="rail-title">
+            <span>VISTAS</span>
+            <small>2 fotos</small>
+          </div>
+
+          <button class="view-thumb active" type="button" data-view="front" aria-label="Mostrar frontal">
+            <span class="thumb-image"><img id="railFrontImg" src="assets/pikachu-zekrom-front.png" alt="Frontal de Pikachu & Zekrom GX CGC 8.5" /></span>
+            <span class="thumb-label">FRONTAL</span>
+          </button>
+
+          <button class="view-thumb" type="button" data-view="back" aria-label="Mostrar trasera">
+            <span class="thumb-image"><img id="railBackImg" src="assets/pikachu-zekrom-back.png" alt="Trasera de Pikachu & Zekrom GX CGC 8.5" /></span>
+            <span class="thumb-label">TRASERA</span>
+          </button>
+
+          <div class="rail-spacer"></div>
+          <button class="rail-action" id="openPhoto" type="button" title="Ampliar fotografía">
+            <svg><use href="#i-expand"></use></svg>
+            <span>Ampliar</span>
+          </button>
+        </aside>
+
+        <section class="showcase-panel" aria-label="Visor 360°">
+          <div class="showcase-topline">
+            <div>
+              <span class="live-dot"></span>
+              <span>UNIDAD REAL · FOTOS REALES</span>
+            </div>
+            <div class="hint-desktop"><span class="mouse-mark"></span> Arrastra para girar</div>
+          </div>
+
+          <div class="stage" id="slabScene">
+            <div class="stage-halo halo-left"></div>
+            <div class="stage-halo halo-right"></div>
+            <div class="stage-beam"></div>
+
+            <div class="slab-wrap" id="slabWrap">
+              <div class="slab-object" id="slabObject" tabindex="0" role="application" aria-label="Slab 3D. Arrastra horizontalmente o usa las flechas para girar.">
+                <div class="slab-face slab-front">
+                  <img id="slabFrontImg" src="assets/pikachu-zekrom-front.png" alt="Pikachu & Zekrom GX CGC 8.5, frontal" draggable="false" />
+                  <span class="slab-reflection"></span>
+                </div>
+                <div class="slab-face slab-back">
+                  <img id="slabBackImg" src="assets/pikachu-zekrom-back.png" alt="Pikachu & Zekrom GX CGC 8.5, trasera" draggable="false" />
+                  <span class="slab-reflection"></span>
+                </div>
+                <span class="slab-side slab-side-left"></span>
+                <span class="slab-side slab-side-right"></span>
+                <span class="slab-side slab-side-top"></span>
+                <span class="slab-side slab-side-bottom"></span>
+              </div>
+            </div>
+
+            <div class="pedestal" aria-hidden="true">
+              <div class="pedestal-top"></div>
+              <div class="pedestal-ring"></div>
+              <div class="pedestal-front"><span>TEJONTURAS</span></div>
+              <div class="pedestal-shadow"></div>
+            </div>
+
+            <div class="rotation-dock" aria-label="Controles del visor 360 grados">
+              <button id="rotateLeft" type="button" aria-label="Girar a la izquierda">
+                <svg><use href="#i-arrow-left"></use></svg>
+              </button>
+              <button class="rotation-center" id="toggleAutoRotate" type="button" aria-pressed="false">
+                <svg><use href="#i-rotate"></use></svg>
+                <span><strong id="rotationLabel">0°</strong><small>360° VIEW</small></span>
+              </button>
+              <button id="rotateRight" type="button" aria-label="Girar a la derecha">
+                <svg><use href="#i-arrow-right"></use></svg>
+              </button>
+            </div>
+
+            <div class="view-indicator" aria-hidden="true">
+              <span class="indicator-front active">FRONT</span>
+              <span class="indicator-line"><i id="indicatorDot"></i></span>
+              <span class="indicator-back">BACK</span>
+            </div>
+          </div>
+        </section>
+
+        <aside class="info-panel">
+          <div class="crumbs"><span>Pokémon</span><i>·</i><span id="crumbSet">Sun &amp; Moon</span><i>·</i><span id="crumbCard">Team Up</span></div>
+
+          <div class="info-badges">
+            <span class="badge badge-grade"><span id="gradeBadgeGrader">CGC</span> <strong id="gradeBadgeValue">8.5</strong></span>
+            <span class="badge badge-stock" id="stockBadge"><i></i> <span>Disponible</span></span>
+          </div>
+
+          <h1 id="productTitle">Pikachu &amp; Zekrom GX</h1>
+          <p class="product-subtitle" id="productSubtitle">Team Up <span>33/181</span> · Holo · 2019</p>
+
+          <div class="cert-row">
+            <div>
+              <small>GRADING</small>
+              <strong id="certGrader">CGC</strong>
+            </div>
+            <div>
+              <small>GRADE</small>
+              <strong id="certGrade">8.5 <em>NM/MINT+</em></strong>
+            </div>
+            <div>
+              <small>CERTIFICADO</small>
+              <strong class="mono" id="certNumber">6077330161</strong>
+            </div>
+          </div>
+
+          <div class="price-block">
+            <div>
+              <small>PRECIO DE VENTA</small>
+              <strong class="price" id="priceDisplay">Consultar</strong>
+            </div>
+            <span class="one-of-one"><svg><use href="#i-spark"></use></svg> Pieza única</span>
+          </div>
+
+          <div class="actions-grid">
+            <button class="primary-action" id="buyButton" type="button">
+              <span>CONTACTAR (TELEGRAM)</span>
+              <svg><use href="#i-arrow-right"></use></svg>
+            </button>
+            <button class="secondary-action" id="offerButton" type="button">OFERTAR (TELEGRAM)</button>
+            <button class="favorite-action" id="favoriteButton" type="button" aria-pressed="false">
+              <svg><use href="#i-heart"></use></svg>
+              <span>Guardar en favoritos</span>
+            </button>
+          </div>
+
+          <div class="details-card">
+            <div class="details-title">
+              <h2>Detalles</h2>
+              <span id="detailId">ID #SV-0001</span>
+            </div>
+            <dl>
+              <div><dt>Set</dt><dd id="detailSet">Team Up</dd></div>
+              <div><dt>Número</dt><dd id="detailNumber">33/181</dd></div>
+              <div><dt>Rareza</dt><dd id="detailRarity">Ultra Rare</dd></div>
+              <div><dt>Acabado</dt><dd id="detailFinish">Holo</dd></div>
+              <div><dt>Idioma</dt><dd id="detailLanguage">English</dd></div>
+              <div><dt>Tipo</dt><dd id="detailType">TAG TEAM GX</dd></div>
+            </dl>
+          </div>
+
+          <div class="micro-note"><span class="green-dot"></span> La fotografía corresponde exactamente a la unidad anunciada.</div>
+        </aside>
+      </section>
+    </section>
+
+    <!-- VISTA 2: Catálogo -->
+    <section id="catalog-view" class="view-section view-hidden">
+      <section class="trust-bar" id="garantias">
+      <article>
+        <span class="trust-icon"><svg><use href="#i-shield"></use></svg></span>
+        <div><strong>Unidad verificable</strong><small>Certificado visible en cada anuncio</small></div>
+      </article>
+      <article>
+        <span class="trust-icon"><svg><use href="#i-expand"></use></svg></span>
+        <div><strong>Fotos sin stock</strong><small>Frontal y trasera de la slab real</small></div>
+      </article>
+      <article>
+        <span class="trust-icon"><svg><use href="#i-truck"></use></svg></span>
+        <div><strong>Envío protegido</strong><small>Seguimiento y embalaje para slabs</small></div>
+      </article>
+      <article>
+        <span class="trust-icon"><svg><use href="#i-rotate"></use></svg></span>
+        <div><strong>Visor interactivo</strong><small>Inspecciona cada pieza a 360°</small></div>
+      </article>
+    </section>
+
+    <section class="catalog" id="catalogo">
+      <div class="catalog-header">
+        <div>
+          <span class="section-kicker">INVENTARIO</span>
+          <h2>Slabs disponibles</h2>
+          <p>Selecciona una pieza para verla en el expositor.</p>
+        </div>
+        <div class="catalog-tools">
+          <div class="filter-pills" id="graderFilter" aria-label="Filtrar por empresa de grading">
+            <button class="active" type="button" data-grader="all">Todas</button>
+            <button type="button" data-grader="CGC">CGC</button>
+            <button type="button" data-grader="PSA">PSA</button>
+            <button type="button" data-grader="BGS">BGS</button>
+          </div>
+          <label class="sort-select">Ordenar
+            <select id="sortCards">
+              <option value="featured">Destacadas</option>
+              <option value="grade-desc">Nota ↓</option>
+              <option value="name">Nombre A–Z</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="inventory-layout">
+        <aside class="filter-panel">
+          <div class="filter-head"><strong>Filtros</strong><button id="clearFilters" type="button">Limpiar</button></div>
+          <div class="filter-group">
+            <span class="filter-label">NOTA</span>
+            <label><input type="checkbox" name="grade" value="10"><span>10</span><small>0</small></label>
+            <label><input type="checkbox" name="grade" value="9.5"><span>9.5</span><small>0</small></label>
+            <label><input type="checkbox" name="grade" value="9"><span>9</span><small>0</small></label>
+            <label><input type="checkbox" name="grade" value="8.5"><span>8.5</span><small>0</small></label>
+            <label><input type="checkbox" name="grade" value="7.5"><span>7.5</span><small>0</small></label>
+            <label><input type="checkbox" name="grade" value="RAW"><span>RAW</span><small>0</small></label>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">ESTADO</span>
+            <label><input type="checkbox" name="stock" value="available" checked><span>Disponible</span></label>
+            <label><input type="checkbox" name="stock" value="incoming" checked><span>Próximamente</span></label>
+          </div>
+        </aside>
+
+        <div class="catalog-content">
+          <div class="catalog-meta-row">
+            <span id="resultCount">1 pieza</span>
+            <span>Fotos reales · inventario propio</span>
+          </div>
+          <div id="cardGrid" class="card-grid"></div>
+        </div>
+      </div>
+      </section>
+    </section>
+  </main>
+
+  <footer id="contacto" class="site-footer">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="Tejonturas Logo" class="brand-img-small" />
+      <div><strong>TEJONTURAS</strong><small>Slab Collectibles, photographed one by one.</small></div>
+    </div>
+    <div class="footer-links">
+      <a href="https://t.me/Hxbility" target="_blank" rel="noopener">@hxbility (Telegram)</a>
+      <a href="https://t.me/TejnRencoroso" target="_blank" rel="noopener">@TejnRencoroso (Telegram)</a>
+    </div>
+    <small>© 2026 · Concepto frontend preparado para GitHub Pages.</small>
+  </footer>
+
+  <dialog id="contactModal" class="contact-modal">
+    <form method="dialog" class="modal-card">
+      <button class="modal-close" value="cancel" aria-label="Cerrar"><svg><use href="#i-x"></use></svg></button>
+      <span class="modal-kicker" id="modalKicker">SOLICITUD DE COMPRA</span>
+      <h2 id="modalTitle">Pikachu &amp; Zekrom GX</h2>
+      <p id="modalText">Este frontend está preparado para conectar el botón con WhatsApp, email o un checkout cuando decidas el flujo de venta.</p>
+      <div class="modal-product">
+        <img id="modalProductImage" src="assets/pikachu-zekrom-front.png" alt="Pikachu & Zekrom GX" />
+        <div><strong id="modalProductGrade">CGC 8.5</strong><span id="modalProductMeta">Team Up · 33/181</span><small id="modalProductCert">Cert. 6077330161</small></div>
+      </div>
+      <button class="modal-primary" value="cancel">Entendido</button>
+    </form>
+  </dialog>
+
+  <dialog id="photoModal" class="photo-modal">
+    <form method="dialog" class="photo-dialog-card">
+      <button class="modal-close photo-close" value="cancel" aria-label="Cerrar"><svg><use href="#i-x"></use></svg></button>
+      <img id="photoModalImage" src="assets/pikachu-zekrom-front.png" alt="Vista ampliada de la slab" />
+      <div class="photo-caption"><span id="photoCaption">FRONTAL · FOTO REAL</span><small>Haz clic fuera o pulsa Esc para cerrar</small></div>
+    </form>
+  </dialog>
+
+  <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
+    <a href="#inicio" class="mobile-nav-item active">
+      <svg><use href="#i-home"></use></svg>
+      <span>Inicio</span>
+    </a>
+    <a href="#catalogo" class="mobile-nav-item">
+      <svg><use href="#i-grid"></use></svg>
+      <span>Catálogo</span>
+    </a>
+    <a href="#contacto" class="mobile-nav-item">
+      <svg><use href="#i-mail"></use></svg>
+      <span>Contacto</span>
+    </a>
+  </nav>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
