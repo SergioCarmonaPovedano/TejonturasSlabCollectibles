@@ -23,9 +23,11 @@ const cardData = [
   { id: 'SV-0022', name: 'Haunter', set: 'Black Star Promos', number: '027', year: 2025, finish: 'Holo', language: 'English', rarity: 'Promo', type: 'Pokémon', grader: 'CGC', grade: 8.5, gradeLabel: 'NM/MINT+', cert: '6163677017', price: 'Consultar', status: 'available', featured: 0, front: 'assets/Haunter-front.webp', back: 'assets/Haunter-Back.webp' },
   { id: 'SV-0023', name: 'Umbreon Gold Star', set: 'Celebrations', number: '17/17', year: 2021, finish: 'Holo', language: 'English', rarity: 'Classic Collection', type: 'Pokémon Star', grader: 'CGC', grade: 8.5, gradeLabel: 'NM/MINT+', cert: '6162939038', price: 'Consultar', status: 'available', featured: 0, front: 'assets/UmbreonCGC-front.webp', back: 'assets/UmbreonCGC-back.webp' },
   { id: 'SV-0024', name: 'Floragato', set: 'Gem Pack Vol.5', number: '077/077', year: 2026, finish: 'Holo', language: 'S. Chinese', rarity: 'Art Rare', type: 'Pokémon', grader: 'CGC', grade: 10, gradeLabel: 'GEM MINT', cert: '6191589020', price: 'Consultar', status: 'incoming', featured: 0, front: 'assets/Floragato-Front.webp', back: 'assets/Floragato-Back.webp' },
-  { id: 'SV-0025', name: 'Vaporeon VMAX', set: 'Eevee Advanced Gift Box', number: '006/009', year: 2024, finish: 'Holo', language: 'S. Chinese', rarity: 'Promo', type: 'Pokémon VMAX', grader: 'CGC', grade: 7.5, gradeLabel: 'NEAR MINT+', cert: '6196547021', price: 'Consultar', status: 'incoming', featured: 0, front: 'assets/Vaporeon-Chinese-Front.webp', back: 'assets/Vaporeon-Chinese-Back.webp' },
+  { id: 'SV-0025', name: 'Vaporeon VMAX', set: 'Eevee Advanced Gift Box', number: '006/009', year: 2024, finish: 'Holo', language: 'S. Chinese', rarity: 'Promo', type: 'Pokémon VMAX', grader: '', grade: 'RAW', gradeLabel: 'UNGRADED', cert: 'N/A', price: 'Consultar', status: 'incoming', featured: 0, front: 'assets/Vaporeon-Chinese-Front.webp', back: 'assets/Vaporeon-Chinese-Back.webp' },
   { id: 'SV-0026', name: 'Raikou V', set: 'Crown Zenith', number: 'GG41/GG70', year: 2023, finish: 'Holo', language: 'English', rarity: 'Galarian Gallery', type: 'Pokémon V', grader: 'CGC', grade: 9, gradeLabel: 'MINT', cert: '6195024006', price: 'Consultar', status: 'incoming', featured: 0, front: 'assets/RaikouCenit-Front.webp', back: 'assets/RaikouCenit-Back.webp' },
-  { id: 'SV-0027', name: 'Pikachu & Zekrom GX', set: 'Black Star Promos', number: 'SM248', year: 2021, finish: 'Holo', language: 'English', rarity: 'Black Star Promo', type: 'TAG TEAM GX', grader: 'CGC', grade: 9, gradeLabel: 'MINT', cert: '6197952045', price: 'Consultar', status: 'incoming', featured: 0, front: 'assets/Pikachu-Zekrom-Gold-Front.webp', back: 'assets/Pikachu-Zekrom-Gold-Back.webp' }
+  { id: 'SV-0027', name: 'Pikachu & Zekrom GX', set: 'Black Star Promos', number: 'SM248', year: 2021, finish: 'Holo', language: 'English', rarity: 'Black Star Promo', type: 'TAG TEAM GX', grader: 'CGC', grade: 9, gradeLabel: 'MINT', cert: '6197952045', price: 'Consultar', status: 'incoming', featured: 0, front: 'assets/Pikachu-Zekrom-Gold-Front.webp', back: 'assets/Pikachu-Zekrom-Gold-Back.webp' },
+  { id: 'SV-0028', name: 'Reshiram & Charizard GX', set: 'Unbroken Bonds', number: '20/214', year: 2019, finish: 'Holo', language: 'English', rarity: 'Ultra Rare', type: 'TAG TEAM GX', grader: '', grade: 'RAW', gradeLabel: 'UNGRADED', cert: 'N/A', price: 'Consultar', status: 'incoming', featured: 0, front: 'assets/Reshiram-Charizard-Raw-Front.webp', back: 'assets/Reshiram-Charizard-Raw-Back.webp' },
+  { id: 'SV-0029', name: 'Oricorio ex', set: 'Black Star Promos', number: '024', year: 2025, finish: 'Holo', language: 'English', rarity: 'Promo', type: 'Pokémon ex', grader: '', grade: 'RAW', gradeLabel: 'UNGRADED', cert: 'N/A', price: 'Consultar', status: 'incoming', featured: 0, front: 'assets/Oricorio-Raw-Front.webp', back: 'assets/Oricorio-Raw-Back.webp' }
 ];
 
 let selectedCard = cardData[0];
@@ -296,14 +298,14 @@ function loadCard(card, { scroll = false } = {}) {
   } else {
     gradeBadge.classList.remove('raw');
   }
-  
+
   $('#productTitle').textContent = card.name;
   $('#productSubtitle').innerHTML = `${card.set} <span>${card.number}</span> · ${card.finish} · ${card.year}`;
   $('#certGrader').textContent = card.grader;
   $('#certGrade').innerHTML = `${card.grade} <em>${card.gradeLabel || ''}</em>`;
   $('#certNumber').textContent = card.cert;
   $('#priceDisplay').textContent = card.price;
-  
+
   const isIncoming = card.status === 'incoming';
   const isSold = card.status === 'sold';
   const buyBtn = $('#buyButton');
@@ -312,8 +314,9 @@ function loadCard(card, { scroll = false } = {}) {
 
   if (slabObject) {
     slabObject.classList.toggle('is-sold', isSold);
+    slabObject.classList.toggle('is-raw', card.grade === 'RAW');
   }
-  
+
   if (stockBadge) {
     stockBadge.classList.remove('badge-incoming', 'badge-sold');
     if (isSold) {
@@ -413,10 +416,17 @@ function placeholderTemplate(index) {
 }
 
 function updateFilterCounts() {
-  const counts = { grade: {}, stock: { available: 0, incoming: 0, sold: 0 } };
+  const counts = { grade: { '10': 0, '9': 0, '8': 0, '7': 0, 'RAW': 0 }, stock: { available: 0, incoming: 0, sold: 0 } };
   cardData.forEach(card => {
-    const g = String(card.grade);
-    counts.grade[g] = (counts.grade[g] || 0) + 1;
+    if (card.grade === 'RAW') {
+      counts.grade['RAW']++;
+    } else {
+      const g = parseFloat(card.grade) || 0;
+      if (g >= 10) counts.grade['10']++;
+      else if (g >= 9) counts.grade['9']++;
+      else if (g >= 8) counts.grade['8']++;
+      else if (g >= 7) counts.grade['7']++;
+    }
     if (counts.stock[card.status] !== undefined) {
       counts.stock[card.status]++;
     }
@@ -445,7 +455,20 @@ function renderCatalog() {
     const haystack = `${card.name} ${card.set} ${card.number} ${card.grader} ${card.grade} ${card.cert}`.toLocaleLowerCase('es');
     const matchesQuery = !query || haystack.includes(query);
     const matchesGrader = graderFilter === 'all' || card.grader === graderFilter;
-    const matchesGrade = activeGrades.length === 0 || activeGrades.includes(String(card.grade));
+    
+    let matchesGrade = activeGrades.length === 0;
+    if (activeGrades.length > 0) {
+      if (card.grade === 'RAW') {
+        matchesGrade = activeGrades.includes('RAW');
+      } else {
+        const g = parseFloat(card.grade) || 0;
+        if (g >= 10 && activeGrades.includes('10')) matchesGrade = true;
+        else if (g >= 9 && g < 10 && activeGrades.includes('9')) matchesGrade = true;
+        else if (g >= 8 && g < 9 && activeGrades.includes('8')) matchesGrade = true;
+        else if (g >= 7 && g < 8 && activeGrades.includes('7')) matchesGrade = true;
+      }
+    }
+
     const matchesStock = activeStock.length === 0 || activeStock.includes(card.status);
     return matchesQuery && matchesGrader && matchesGrade && matchesStock;
   });
@@ -475,7 +498,7 @@ function renderCatalog() {
   }
 
   const placeholders = window.innerWidth > 620 ? Math.max(0, 4 - result.length) : 0;
-  cardGrid.innerHTML = result.map(cardTemplate).join('') + Array.from({length: placeholders}, (_,i) => placeholderTemplate(i)).join('');
+  cardGrid.innerHTML = result.map(cardTemplate).join('') + Array.from({ length: placeholders }, (_, i) => placeholderTemplate(i)).join('');
 
   $$('[data-card-id]').forEach(cardEl => {
     const activate = () => {
@@ -582,7 +605,7 @@ function updateNav() {
     navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#inicio'));
     return;
   }
-  
+
   navLinks.forEach(link => {
     if (isContactVisible) {
       link.classList.toggle('active', link.getAttribute('href') === '#contacto');
@@ -631,9 +654,9 @@ function showViewer() {
 $('#enterCatalogBtn')?.addEventListener('click', showCatalog);
 $('#backToCatalogBtn')?.addEventListener('click', showCatalog);
 $$('a[href="#inicio"]').forEach(link => link.addEventListener('click', (e) => { e.preventDefault(); showWelcome(); }));
-$$('a[href="#contacto"]').forEach(link => link.addEventListener('click', (e) => { 
-  e.preventDefault(); 
-  if (currentAppView !== 'catalog') showCatalog(); 
+$$('a[href="#contacto"]').forEach(link => link.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (currentAppView !== 'catalog') showCatalog();
   setTimeout(() => document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' }), 50);
 }));
 $$('a[href="#catalogo"]').forEach(link => link.addEventListener('click', showCatalog));
@@ -643,7 +666,7 @@ updateNav('welcome');
 
 // Modificar loadCard para que abra el visor
 const originalLoadCard = loadCard;
-loadCard = function(card, options) {
+loadCard = function (card, options) {
   originalLoadCard(card, options);
   if (options && options.scroll) {
     showViewer();
