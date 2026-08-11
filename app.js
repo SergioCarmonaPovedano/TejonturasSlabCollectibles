@@ -4,7 +4,7 @@ const cardData = [
   { id: 'SV-0003', name: 'Entei V', set: 'Crown Zenith', number: 'GG36/GG70', year: 2023, finish: 'Holo', language: 'English', rarity: 'Galarian Gallery', type: 'Pokémon V', grader: 'CGC', grade: 8.5, gradeLabel: 'NM/MINT+', cert: '6122935050', price: 'Consultar', status: 'available', featured: 0, front: 'assets/Entei-Front.webp', back: 'assets/Entei-Back.webp' },
   { id: 'SV-0004', name: 'Giratina EX', set: 'Ancient Origins', number: '93/98', year: 2015, finish: 'Holo', language: 'English', rarity: 'Ultra Rare', type: 'Pokémon EX', grader: 'CGC', grade: 7.5, gradeLabel: 'NEAR MINT+', cert: '6138340012', price: 'Consultar', status: 'available', featured: 0, front: 'assets/Giratina-Front.webp', back: 'assets/Giratina-Back.webp' },
   { id: 'SV-0005', name: 'Glaceon VSTAR', set: 'VSTAR Universe', number: '210/172', year: 2022, finish: 'Holo', language: 'Japanese', rarity: 'Special Art Rare', type: 'Pokémon VSTAR', grader: 'CGC', grade: 10, gradeLabel: 'GEM MINT', cert: '6113633019', price: 'Consultar', status: 'available', featured: 0, front: 'assets/Glaceon-Front.webp', back: 'assets/Glaceon-Back.webp' },
-  { id: 'SV-0006', name: 'Jolteon EX', set: 'Generations', number: '28a/83', year: 2017, finish: 'Holo', language: 'English', rarity: 'Promo', type: 'Pokémon EX', grader: 'CGC', grade: 8.5, gradeLabel: 'NM/MINT+', cert: '6116251088', price: 'Consultar', status: 'available', featured: 0, front: 'assets/Jolteon-2-Front.webp', back: 'assets/Jolteon-2-Back.webp' },
+  { id: 'SV-0006', name: 'Jolteon EX', set: 'Generations', number: '28a/83', year: 2017, finish: 'Holo', language: 'English', rarity: 'Promo', type: 'Pokémon EX', grader: 'CGC', grade: 8.5, gradeLabel: 'NM/MINT+', cert: '6116251088', price: 'Consultar', status: 'sold', featured: 0, front: 'assets/Jolteon-2-Front.webp', back: 'assets/Jolteon-2-Back.webp' },
   { id: 'SV-0007', name: 'Jolteon', set: 'Brilliant Stars', number: 'TG04/TG30', year: 2022, finish: 'Holo', language: 'English', rarity: 'Trainer Gallery', type: 'Pokémon', grader: 'CGC', grade: 10, gradeLabel: 'GEM MINT', cert: '6120316014', price: 'Consultar', status: 'available', featured: 0, front: 'assets/Jolteon-Front.webp', back: 'assets/Jolteon-Back.webp' },
   { id: 'SV-0008', name: 'Leafeon VSTAR', set: 'VSTAR Universe', number: '210/172', year: 2022, finish: 'Holo', language: 'Japanese', rarity: 'Special Art Rare', type: 'Pokémon VSTAR', grader: 'CGC', grade: 10, gradeLabel: 'GEM MINT', cert: '6091514039', price: 'Consultar', status: 'available', featured: 0, front: 'assets/Leafeon-Front.webp', back: 'assets/Leafeon-Back.webp' },
   { id: 'SV-0009', name: 'M Lucario EX', set: 'Furious Fists', number: '55a/111', year: 2017, finish: 'Holo', language: 'English', rarity: 'Promo', type: 'Mega Pokémon EX', grader: 'CGC', grade: 8.5, gradeLabel: 'NM/MINT+', cert: '6152805020', price: 'Consultar', status: 'available', featured: 0, front: 'assets/Lucario-Front.webp', back: 'assets/Lucario-Back.webp' },
@@ -24,7 +24,8 @@ const cardData = [
   { id: 'SV-0023', name: 'Umbreon Gold Star', set: 'Celebrations', number: '17/17', year: 2021, finish: 'Holo', language: 'English', rarity: 'Classic Collection', type: 'Pokémon Star', grader: 'CGC', grade: 8.5, gradeLabel: 'NM/MINT+', cert: '6162939038', price: 'Consultar', status: 'available', featured: 0, front: 'assets/UmbreonCGC-front.webp', back: 'assets/UmbreonCGC-back.webp' },
   { id: 'SV-0024', name: 'Floragato', set: 'Gem Pack Vol.5', number: '077/077', year: 2026, finish: 'Holo', language: 'S. Chinese', rarity: 'Art Rare', type: 'Pokémon', grader: 'CGC', grade: 10, gradeLabel: 'GEM MINT', cert: '6191589020', price: 'Consultar', status: 'incoming', featured: 0, front: 'assets/Floragato-Front.webp', back: 'assets/Floragato-Back.webp' },
   { id: 'SV-0025', name: 'Vaporeon VMAX', set: 'Eevee Advanced Gift Box', number: '006/009', year: 2024, finish: 'Holo', language: 'S. Chinese', rarity: 'Promo', type: 'Pokémon VMAX', grader: 'CGC', grade: 7.5, gradeLabel: 'NEAR MINT+', cert: '6196547021', price: 'Consultar', status: 'incoming', featured: 0, front: 'assets/Vaporeon-Chinese-Front.webp', back: 'assets/Vaporeon-Chinese-Back.webp' },
-  { id: 'SV-0026', name: 'Raikou V', set: 'Crown Zenith', number: 'GG41/GG70', year: 2023, finish: 'Holo', language: 'English', rarity: 'Galarian Gallery', type: 'Pokémon V', grader: 'CGC', grade: 9, gradeLabel: 'MINT', cert: '6195024006', price: 'Consultar', status: 'incoming', featured: 0, front: 'assets/RaikouCenit-Front.webp', back: 'assets/RaikouCenit-Back.webp' }
+  { id: 'SV-0026', name: 'Raikou V', set: 'Crown Zenith', number: 'GG41/GG70', year: 2023, finish: 'Holo', language: 'English', rarity: 'Galarian Gallery', type: 'Pokémon V', grader: 'CGC', grade: 9, gradeLabel: 'MINT', cert: '6195024006', price: 'Consultar', status: 'incoming', featured: 0, front: 'assets/RaikouCenit-Front.webp', back: 'assets/RaikouCenit-Back.webp' },
+  { id: 'SV-0027', name: 'Pikachu & Zekrom GX', set: 'Black Star Promos', number: 'SM248', year: 2021, finish: 'Holo', language: 'English', rarity: 'Black Star Promo', type: 'TAG TEAM GX', grader: 'CGC', grade: 9, gradeLabel: 'MINT', cert: '6197952045', price: 'Consultar', status: 'incoming', featured: 0, front: 'assets/Pikachu-Zekrom-Gold-Front.webp', back: 'assets/Pikachu-Zekrom-Gold-Back.webp' }
 ];
 
 let selectedCard = cardData[0];
@@ -244,13 +245,13 @@ function openContactModal(mode) {
 const TELEGRAM_USERNAME = 'Hxbility'; // Cambia esto por tu usuario real de Telegram
 
 $('#buyButton')?.addEventListener('click', () => {
-  if (!selectedCard) return;
+  if (!selectedCard || selectedCard.status === 'sold' || selectedCard.status === 'incoming') return;
   const msg = `¡Hola! Me interesa comprar la carta ${selectedCard.name} (${selectedCard.grader} ${selectedCard.grade}) - ID: ${selectedCard.id}.`;
   window.open(`https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(msg)}`, '_blank');
 });
 
 $('#offerButton')?.addEventListener('click', () => {
-  if (!selectedCard) return;
+  if (!selectedCard || selectedCard.status === 'sold' || selectedCard.status === 'incoming') return;
   const msg = `¡Hola! Me gustaría hacer una oferta por la carta ${selectedCard.name} (${selectedCard.grader} ${selectedCard.grade}) - ID: ${selectedCard.id}.`;
   window.open(`https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(msg)}`, '_blank');
 });
@@ -304,24 +305,38 @@ function loadCard(card, { scroll = false } = {}) {
   $('#priceDisplay').textContent = card.price;
   
   const isIncoming = card.status === 'incoming';
+  const isSold = card.status === 'sold';
   const buyBtn = $('#buyButton');
   const offerBtn = $('#offerButton');
   const stockBadge = $('#stockBadge');
+
+  if (slabObject) {
+    slabObject.classList.toggle('is-sold', isSold);
+  }
   
   if (stockBadge) {
-    if (isIncoming) {
+    stockBadge.classList.remove('badge-incoming', 'badge-sold');
+    if (isSold) {
+      stockBadge.classList.add('badge-sold');
+      stockBadge.querySelector('span').textContent = 'Agotado';
+    } else if (isIncoming) {
       stockBadge.classList.add('badge-incoming');
       stockBadge.querySelector('span').textContent = 'Próximamente';
     } else {
-      stockBadge.classList.remove('badge-incoming');
       stockBadge.querySelector('span').textContent = 'Disponible';
     }
   }
 
   if (buyBtn && offerBtn) {
-    buyBtn.disabled = isIncoming;
-    offerBtn.disabled = isIncoming;
-    if (isIncoming) {
+    const isUnavailable = isIncoming || isSold;
+    buyBtn.disabled = isUnavailable;
+    offerBtn.disabled = isUnavailable;
+    if (isSold) {
+      buyBtn.querySelector('span').textContent = 'AGOTADO';
+      offerBtn.textContent = 'NO DISPONIBLE';
+      buyBtn.style.opacity = '0.5';
+      offerBtn.style.opacity = '0.5';
+    } else if (isIncoming) {
       buyBtn.querySelector('span').textContent = 'PRÓXIMAMENTE';
       offerBtn.textContent = 'NO DISPONIBLE';
       buyBtn.style.opacity = '0.5';
@@ -367,10 +382,18 @@ let graderFilter = 'all';
 
 function cardTemplate(card) {
   const isIncoming = card.status === 'incoming';
+  const isSold = card.status === 'sold';
+  let badgeHTML = '';
+  if (isSold) {
+    badgeHTML = '<span class="sold-label">AGOTADO</span>';
+  } else if (isIncoming) {
+    badgeHTML = '<span class="incoming-label">PRÓXIMAMENTE</span>';
+  }
+  const cardClass = isSold ? 'sold-card' : (isIncoming ? 'incoming-card' : '');
   return `
-    <article class="inventory-card ${isIncoming ? 'incoming-card' : ''}" data-card-id="${card.id}" tabindex="0" aria-label="Ver ${card.name}">
+    <article class="inventory-card ${cardClass}" data-card-id="${card.id}" tabindex="0" aria-label="Ver ${card.name}">
       <div class="card-visual">
-        ${isIncoming ? '<span class="incoming-label">PRÓXIMAMENTE</span>' : ''}
+        ${badgeHTML}
         <span class="card-grade">${card.grader} ${card.grade}</span>
         <button class="card-heart ${favorite ? 'active' : ''}" type="button" aria-label="Favorito" data-favorite-card="${card.id}">
           <svg><use href="#i-heart"></use></svg>
@@ -390,7 +413,7 @@ function placeholderTemplate(index) {
 }
 
 function updateFilterCounts() {
-  const counts = { grade: {}, stock: { available: 0, incoming: 0 } };
+  const counts = { grade: {}, stock: { available: 0, incoming: 0, sold: 0 } };
   cardData.forEach(card => {
     const g = String(card.grade);
     counts.grade[g] = (counts.grade[g] || 0) + 1;
@@ -427,17 +450,23 @@ function renderCatalog() {
     return matchesQuery && matchesGrader && matchesGrade && matchesStock;
   });
 
-  if (sortCards.value === 'name') {
-    result.sort((a,b) => a.name.localeCompare(b.name, 'es'));
-  } else if (sortCards.value === 'grade-desc') {
-    result.sort((a,b) => {
+  result.sort((a, b) => {
+    const isSoldA = a.status === 'sold' ? 1 : 0;
+    const isSoldB = b.status === 'sold' ? 1 : 0;
+    if (isSoldA !== isSoldB) {
+      return isSoldA - isSoldB;
+    }
+
+    if (sortCards.value === 'name') {
+      return a.name.localeCompare(b.name, 'es');
+    } else if (sortCards.value === 'grade-desc') {
       const gradeA = parseFloat(a.grade) || 0;
       const gradeB = parseFloat(b.grade) || 0;
       return gradeB - gradeA;
-    });
-  } else {
-    result.sort((a,b) => b.featured - a.featured);
-  }
+    } else {
+      return b.featured - a.featured;
+    }
+  });
 
   resultCount.textContent = `${result.length} ${result.length === 1 ? 'pieza' : 'piezas'}`;
   if (!result.length) {

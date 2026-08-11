@@ -142,12 +142,12 @@
           </div>
 
           <button class="view-thumb active" type="button" data-view="front" aria-label="Mostrar frontal">
-            <span class="thumb-image"><img id="railFrontImg" src="assets/pikachu-zekrom-front.png" alt="Frontal de Pikachu & Zekrom GX CGC 8.5" /></span>
+            <span class="thumb-image"><img id="railFrontImg" src="assets/pikachu-zekrom-front.webp" alt="Frontal de Pikachu & Zekrom GX CGC 8.5" /></span>
             <span class="thumb-label">FRONTAL</span>
           </button>
 
           <button class="view-thumb" type="button" data-view="back" aria-label="Mostrar trasera">
-            <span class="thumb-image"><img id="railBackImg" src="assets/pikachu-zekrom-back.png" alt="Trasera de Pikachu & Zekrom GX CGC 8.5" /></span>
+            <span class="thumb-image"><img id="railBackImg" src="assets/pikachu-zekrom-back.webp" alt="Trasera de Pikachu & Zekrom GX CGC 8.5" /></span>
             <span class="thumb-label">TRASERA</span>
           </button>
 
@@ -175,12 +175,14 @@
             <div class="slab-wrap" id="slabWrap">
               <div class="slab-object" id="slabObject" tabindex="0" role="application" aria-label="Slab 3D. Arrastra horizontalmente o usa las flechas para girar.">
                 <div class="slab-face slab-front">
-                  <img id="slabFrontImg" src="assets/pikachu-zekrom-front.png" alt="Pikachu & Zekrom GX CGC 8.5, frontal" draggable="false" />
+                  <img id="slabFrontImg" src="assets/pikachu-zekrom-front.webp" alt="Pikachu & Zekrom GX CGC 8.5, frontal" draggable="false" />
                   <span class="slab-reflection"></span>
+                  <div class="slab-sold-stamp"><span>AGOTADO</span></div>
                 </div>
                 <div class="slab-face slab-back">
-                  <img id="slabBackImg" src="assets/pikachu-zekrom-back.png" alt="Pikachu & Zekrom GX CGC 8.5, trasera" draggable="false" />
+                  <img id="slabBackImg" src="assets/pikachu-zekrom-back.webp" alt="Pikachu & Zekrom GX CGC 8.5, trasera" draggable="false" />
                   <span class="slab-reflection"></span>
+                  <div class="slab-sold-stamp"><span>AGOTADO</span></div>
                 </div>
                 <span class="slab-side slab-side-left"></span>
                 <span class="slab-side slab-side-right"></span>
@@ -342,8 +344,9 @@
           </div>
           <div class="filter-group">
             <span class="filter-label">ESTADO</span>
-            <label><input type="checkbox" name="stock" value="available" checked><span>Disponible</span></label>
-            <label><input type="checkbox" name="stock" value="incoming" checked><span>Próximamente</span></label>
+            <label><input type="checkbox" name="stock" value="available" checked><span>Disponible</span><small>0</small></label>
+            <label><input type="checkbox" name="stock" value="incoming" checked><span>Próximamente</span><small>0</small></label>
+            <label><input type="checkbox" name="stock" value="sold" checked><span>Agotado</span><small>0</small></label>
           </div>
         </aside>
 
